@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Add New Student</h1>
+<form action="#" th:action="@{/api/students/save}" th:object="${newStudent}" method="post">
+    <p>
+        <label for="name">Name</label>
+        <input type="text" th:field="*{fullName}" id="name" required="required">
+    </p>
+    <p>
+        <label for="age">Age</label>
+        <input type="text" th:field="*{age}" id="age" required="required">
+    </p>
+    <p>
+        <label for="gender">Gender</label>
+        <input type="text" th:field="*{gender}" id="gender" required="required">
+    </p>
+    <p>
+        <label for="image">Image</label>
+        <input type="text" th:field="*{image}" id="image" required="required">
+    </p>
+    <p>
+        <button type="submit">Save</button>
+    </p>
+</form>
+</body>
+</html>

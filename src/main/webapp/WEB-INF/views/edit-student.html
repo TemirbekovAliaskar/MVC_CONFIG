@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+</head>
+<body>
+<h1>Edit Student</h1>
+<form action="#" th:action="@{/api/students/edit/{studentId} (studentId = ${studentId})}" th:object="${student}" method="post">
+    <p>
+        <label for="name">Name</label>
+        <input type="text" th:field="*{fullName}" id="name" required="required">
+    </p>
+    <p>
+        <label for="age">Age</label>
+        <input type="text" th:field="*{age}" id="age" required="required">
+    </p>
+    <p>
+        <label for="gender">Gender</label>
+        <input type="text" th:field="*{gender}" id="gender" required="required">
+    </p>
+    <p>
+        <label for="image">Image</label>
+        <input type="text" th:field="*{image}" id="image" required="required">
+    </p>
+    <p>
+        <button type="submit">RUN</button>
+    </p>
+</form>
+</body>
+</html>
